@@ -23,7 +23,7 @@ public class Program
     int carry = 0;
     LinkedList linkedListSumHead = null;
     LinkedList runningSum = null;
-    while (linkedListOne != null || linkedListTwo != null)
+    while (linkedListOne != null || linkedListTwo != null || carry > 0)
     {
       int sum = (linkedListOne?.value ?? 0) + (linkedListTwo?.value ?? 0) + carry;
 			
@@ -47,11 +47,6 @@ public class Program
       linkedListTwo = linkedListTwo?.next;
     }
 		
-		if(carry > 0)
-		{
-			runningSum.next = new LinkedList(carry);
-		}
-
     return linkedListSumHead;
   }
 }
